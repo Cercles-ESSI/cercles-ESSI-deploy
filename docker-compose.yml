@@ -14,7 +14,7 @@ services:
 
   # 2. BACKEND (Spring Boot)
   backend:
-    build: ./cercles-tfg-backend  # La ruta a la carpeta de tu backend
+    build: ./backend  # La ruta a la carpeta del  backend
     ports:
       - "8080:8080"
     depends_on:
@@ -28,7 +28,7 @@ services:
 
   # 3. FRONTEND (React + Nginx)
   frontend:
-    build: ./cercles-tfg-frontend # La ruta a la carpeta de tu frontend
+    build: ./frontend # La ruta a la carpeta del frontend
     ports:
       - "3000:80"     # Exponemos el puerto 80 de Nginx en el puerto 3000 de tu PC
     depends_on:
