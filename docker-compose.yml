@@ -1,0 +1,39 @@
+
+services:
+  # 1. BASE DE DATOS (MariaDB)
+  db:
+    image: mariadb:11
+    restart: always
+    environment:
+      MARIADB_DATABASE: CERCLES
+      MARIADB_ROOT_PASSWORD: 1234
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  # 2. BACKEND (Spring Boot)
+  backend:
+    build: ./cercles-tfg-backend  # La ruta a la carpeta de tu backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://db:3306/CERCLES
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=1234
+      # Esto le dice a Hibernate que cree las tablas si no existen
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  # 3. FRONTEND (React + Nginx)
+  frontend:
+    build: ./cercles-tfg-frontend # La ruta a la carpeta de tu frontend
+    ports:
+      - "3000:80"     # Exponemos el puerto 80 de Nginx en el puerto 3000 de tu PC
+    depends_on:
+      - backend
+
+# Declaramos el volumen para que la base de datos no se borre al apagar
+volumes:
+  db_data:

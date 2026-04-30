@@ -1,0 +1,8 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Cercles-ESSI/cercles-ESSI-frontend.git
+	branch = dev
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Cercles-ESSI/cercles-ESSI-backend.git
+	branch = dev
