@@ -32,7 +32,7 @@ En este archivo debes poner la URL de la API de Taiga y definir tu correo de Goo
 ```properties
 
 #API Taiga
-taiga.api.url=<URL_DE_LA_API_DE_TAIGA>
+taiga.api.url=https://api.taiga.io/api/v1/
 # Reemplazar por el correo de Google con el que harás el primer login
 app.initial-email=maryx51202@gmail.com
 app.initial-name=Mary Ojuyenum
