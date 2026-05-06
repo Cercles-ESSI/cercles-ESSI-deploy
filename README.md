@@ -7,6 +7,7 @@
 Antes de proceder con la instalación de CERCLES haciendo uso de Docker Compose, asegúrate de cumplir con los siguientes requisitos según tu sistema operativo:
 
 1.**Docker y Docker Compose**:
+  
   1.1 En Windows: Descargar e instalar Docker Desktop desde [Docker](https://www.docker.com/products/docker-desktop/).Reinicia el sistema tras completar el proceso.
   
   1.2 En Linux (Ubuntu): Instalar mediante terminal:
@@ -26,19 +27,20 @@ Antes de proceder con la instalación de CERCLES haciendo uso de Docker Compose,
 
 Edita el archivo `application-secret.properties`, ubicado en `src/main/resources` del proyecto backend.
 
-En este archivo debes configurar la URL de la API de Taiga y definir tu correo de Google para poder entrar la primera vez.
+En este archivo debes poner la URL de la API de Taiga y definir tu correo de Google y tu nombre para poder entrar la primera vez. Un ejemplo sería: 
 
 ```properties
 
 #API Taiga
 taiga.api.url=<URL_DE_LA_API_DE_TAIGA>
 # Reemplazar por el correo de Google con el que harás el primer login
-app.admin.initial-email=<TU_CORREO_DE_GOOGLE@gmail.com>
+app.initial-email=maryx51202@gmail.com
+app.initial-name=Mary Ojuyenum
 ```
 
-### **2. Iniciar el Servidor**
+### **2. Iniciar el proyecto**
 
-Inicia Apache Tomcat y verifica que la aplicación esté funcionando accediendo a `http://localhost:8080`.
+Inicia el docker  y verifica que la aplicación esté funcionando accediendo a `http://localhost:3030`.
 
 ---
 
