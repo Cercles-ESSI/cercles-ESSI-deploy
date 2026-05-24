@@ -11,14 +11,20 @@ services:
       - db_data:/var/lib/mysql
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # 2. BACKEND (Spring Boot)
   backend:
-    build: ./backend  # La ruta a la carpeta del  backend
+    build: ./cercles-tfg-backend  # La ruta a la carpeta de tu backend
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      - db:
+          condition: service_healthy
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mariadb://db:3306/CERCLES
       - SPRING_DATASOURCE_USERNAME=root
@@ -28,7 +34,7 @@ services:
 
   # 3. FRONTEND (React + Nginx)
   frontend:
-    build: ./frontend # La ruta a la carpeta del frontend
+    build: ./cercles-tfg-frontend # La ruta a la carpeta de tu frontend
     ports:
       - "3000:80"     # Exponemos el puerto 80 de Nginx en el puerto 3000 de tu PC
     depends_on:
