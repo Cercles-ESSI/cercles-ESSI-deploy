@@ -23,8 +23,8 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - db:
-          condition: service_healthy
+      db:
+        condition: service_healthy
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mariadb://db:3306/CERCLES
       - SPRING_DATASOURCE_USERNAME=root
