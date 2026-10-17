@@ -23,7 +23,7 @@ Antes de proceder con la instalación de CERCLES haciendo uso de Docker Compose,
 
 ## **Pasos de Instalación**
 
-### **1. Configurar la Conexión a la API de TAIGA y el correo para el primer login**
+### **1. Configurar el correo para el primer login**
 
 Edita el archivo `application-secret.properties`, ubicado en `src/main/resources` del proyecto backend.
 
