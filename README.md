@@ -48,7 +48,7 @@ Inicia el docker  y verifica que la aplicación esté funcionando accediendo a `
 | Archivo                                                      | Nombre                             | Descripción                                                |
 |--------------------------------------------------------------|------------------------------------|------------------------------------------------------------|
 | [Manual de usuario](https://github.com/cercles-tfg/cercles-tfg-frontend/blob/main/docs/Manual%20de%20usuario.pdf) | Manual de usuario                  | Guía para los usuarios de la aplicación CERCLES, explicando cómo usar las funcionalidades. |
-| [Swagger API](https://cercles-tfg.github.io/cercles-tfg-backend/) | Documentación Swagger API           | Acceso al Swagger que describe la API RESTful de CERCLES, creado mediante una GitHub Page |
+| [Swagger API](https://cercles-essi.github.io/cercles-ESSI-backend/) | Documentación Swagger API           | Acceso al Swagger que describe la API RESTful de CERCLES, creado mediante una GitHub Page |
 
 ---
 
