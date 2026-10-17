@@ -27,12 +27,9 @@ Antes de proceder con la instalación de CERCLES haciendo uso de Docker Compose,
 
 Edita el archivo `application-secret.properties`, ubicado en `src/main/resources` del proyecto backend.
 
-En este archivo debes poner la URL de la API de Taiga y definir tu correo de Google y tu nombre para poder entrar la primera vez. Un ejemplo sería: 
+En este archivo debes definir tu correo de Google y tu nombre para poder entrar la primera vez. Un ejemplo sería: 
 
 ```properties
-
-#API Taiga
-taiga.api.url=https://api.taiga.io/api/v1/
 # Reemplazar por el correo de Google con el que harás el primer login
 app.initial-email=maryx51202@gmail.com
 app.initial-name=Mary Ojuyenum
