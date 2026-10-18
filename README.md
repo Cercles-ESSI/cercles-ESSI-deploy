@@ -63,13 +63,13 @@ Para comprobarlo, abre tu navegador web y accede a la dirección local habilitad
 
 | Archivo                                                      | Nombre                             | Descripción                                                |
 |--------------------------------------------------------------|------------------------------------|------------------------------------------------------------|
-| [Manual de usuario](https://github.com/cercles-tfg/cercles-tfg-frontend/blob/main/docs/Manual%20de%20usuario.pdf) | Manual de usuario                  | Guía para los usuarios de la aplicación CERCLES, explicando cómo usar las funcionalidades. |
+| [Manual de usuario](https://github.com/Cercles-ESSI/cercles-ESSI-deploy/wiki) | Manual de usuario                  | Guía para los usuarios de la aplicación CERCLES, explicando cómo usar las funcionalidades. |
 | [Swagger API](https://cercles-essi.github.io/cercles-ESSI-backend/) | Documentación Swagger API           | Acceso al Swagger que describe la API RESTful de CERCLES, creado mediante una GitHub Page |
 
 ---
 
 ## **Licencia**
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/cercles-tfg/.github/blob/main/LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/Cercles-ESSI/cercles-ESSI-frontend/blob/main/LICENSE) file for details.
 
 ---
