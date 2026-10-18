@@ -16,8 +16,6 @@ Antes de proceder con la instalación de CERCLES haciendo uso de Docker Compose,
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
   ```
   (Opcional: Añade tu usuario al grupo docker con sudo usermod -aG docker $USER para ejecutar comandos sin sudo).
-  
-2. **IDE** (Opcional para despliegue): Visual Studio Code (VSC) o cualquier otro IDE para proyectos backend y frontend (como IntelliJ o Eclipse).
 
 ---
 ## **Pasos de Instalación**
@@ -55,7 +53,7 @@ docker compose up --build -d
 
 Una vez que el motor de Docker haya descargado las imágenes base, compilado el código y los servicios de la base de datos, el Backend y el Frontend hayan arrancado completamente, el proceso finaliza verificando que la plataforma se encuentra operativa. 
 
-Para comprobarlo, abre tu navegador web y accede a la dirección local habilitada por el puerto configurado: http://localhost:3030. Si todo es correcto, se mostrará la pantalla de inicio de sesión.
+Para comprobarlo, abre tu navegador web y accede a la dirección local habilitada por el puerto configurado: http://localhost:3000. Si todo es correcto, se mostrará la pantalla de inicio de sesión.
 
 ---
 
