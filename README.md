@@ -20,24 +20,42 @@ Antes de proceder con la instalación de CERCLES haciendo uso de Docker Compose,
 2. **IDE** (Opcional para despliegue): Visual Studio Code (VSC) o cualquier otro IDE para proyectos backend y frontend (como IntelliJ o Eclipse).
 
 ---
-
 ## **Pasos de Instalación**
 
-### **1. Configurar el correo para el primer login**
+### **1. Clonar el repositorio del proyecto**
 
-Edita el archivo `application-secret.properties`, ubicado en `src/main/resources` del proyecto backend.
+El primer paso para comenzar la instalación es descargar el código fuente al sistema. Para facilitar este proceso, se utiliza el repositorio de integración llamado `cercles-ESSI-deploy`. Este repositorio contiene los archivos de orquestación de Docker y enlaza directamente los repositorios del Frontend y el Backend mediante submódulos de Git.
 
-En este archivo debes definir tu correo de Google y tu nombre para poder entrar la primera vez. Un ejemplo sería: 
+Para obtener todos los archivos correctamente, abre una terminal y ejecuta el siguiente comando, indicando de manera explícita la URL pública del repositorio y la opción para descargar los submódulos asociados:
+
+```bash
+git clone --recurse-submodules https://github.com/Cercles-ESSI/cercles-ESSI-deploy.git
+```
+
+### **2. Configurar el correo para el primer inicio de sesión**
+
+Una vez descargado el código, y como es la primera vez que se arranca el sistema, es necesario configurar una cuenta de Google para permitir el primer inicio de sesión (dado que la aplicación utiliza el sistema de autenticación cerrado de OAuth).
+
+Para hacerlo, edita el archivo `application-secret.properties`, ubicado dentro del directorio del Backend en `/backend/src/main/resources/`. En este archivo debes definir tu correo de Google y tu nombre completo siguiendo esta estructura:
 
 ```properties
-# Reemplazar por el correo de Google con el que harás el primer login
 app.initial-email=maryx51202@gmail.com
 app.initial-name=Mary Ojuyenum
 ```
 
-### **2. Iniciar el proyecto**
+*(De manera alternativa, este primer usuario también se podría dar de alta modificando directamente la base de datos una vez creada y añadiendo el registro manualmente).*
 
-Inicia el docker  y verifica que la aplicación esté funcionando accediendo a `http://localhost:3030`.
+### **3. Arranque del proyecto y verificación**
+
+Con las credenciales iniciales configuradas, sitúate con la terminal en la raíz del directorio recién clonado (donde se encuentra el archivo `docker-compose.yml`) e inicia y compila los contenedores de Docker con el siguiente comando:
+
+```bash
+docker compose up --build -d
+```
+
+Una vez que el motor de Docker haya descargado las imágenes base, compilado el código y los servicios de la base de datos, el Backend y el Frontend hayan arrancado completamente, el proceso finaliza verificando que la plataforma se encuentra operativa. 
+
+Para comprobarlo, abre tu navegador web y accede a la dirección local habilitada por el puerto configurado: http://localhost:3030. Si todo es correcto, se mostrará la pantalla de inicio de sesión.
 
 ---
 
