@@ -43,7 +43,17 @@ app.initial-name=Mary Ojuyenum
 
 *(De manera alternativa, este primer usuario también se podría dar de alta modificando directamente la base de datos una vez creada y añadiendo el registro manualmente).*
 
-### **3. Arranque del proyecto y verificación**
+### **3. Configuración de una base de datos externa (Opcional)**
+
+Por defecto, el orquestador está preparado para instanciar automáticamente un contenedor de MariaDB para que el sistema funcione de manera totalmente autónoma en cualquier ordenador. Sin embargo, si se desea desplegar la aplicación en un entorno de producción que ya dispone de su propio servidor de base de datos, se puede hacer el despliegue aún más ligero.
+
+Para conseguirlo, solo tienes que editar el archivo `docker-compose.yml` y realizar los siguientes cambios sin necesidad de tocar el código fuente:
+
+* Eliminar completamente el bloque del servicio `db` y los volúmenes asociados (`volumes: db_data`).
+* Eliminar la dependencia `depends_on: - db` dentro del servicio `backend`.
+* Modificar la variable de entorno `SPRING_DATASOURCE_URL` (y las credenciales `USERNAME` y `PASSWORD`) para apuntar directamente a la dirección de la base de datos externa.
+
+### **4. Arranque del proyecto y verificación**
 
 Con las credenciales iniciales configuradas, sitúate con la terminal en la raíz del directorio recién clonado (donde se encuentra el archivo `docker-compose.yml`) e inicia y compila los contenedores de Docker con el siguiente comando:
 
